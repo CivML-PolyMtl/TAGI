@@ -1,7 +1,7 @@
 # TAGI
 Tractable Approximate Gaussian Inference for Bayesian Neural Network
 
-This repository contain the code for performing the regression and classigication benchmarks using the TAGI method for Bayesian Networks.
+This repository contain the code for performing the regression and classification benchmarks using the TAGI method for Bayesian Networks.
     
 Go see our [YouTube channel](https://www.youtube.com/channel/UC8wFqCVts-0Xze2qjiGE4uQ/) where you can find more information.
 
