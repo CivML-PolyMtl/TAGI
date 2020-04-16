@@ -7,7 +7,8 @@ Go see our [YouTube channel](https://www.youtube.com/channel/UC8wFqCVts-0Xze2qji
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jqd3Bj0q2Sc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5vxTgYYFmlM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](https://img.youtube.com/vi/5vxTgYYFmlM/0.jpg)](https://www.youtube.com/watch?v=5vxTgYYFmlM)
+
 
 ## How to cite
 
