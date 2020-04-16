@@ -5,7 +5,7 @@ This repository contain the code for performing the regression and classificatio
     
 Go see our [YouTube channel](https://www.youtube.com/channel/UC8wFqCVts-0Xze2qjiGE4uQ/) where you can find more information.
 
-[![](https://img.youtube.com/vi/jqd3Bj0q2Sc/0.jpg)](https://www.youtube.com/embed/jqd3Bj0q2Sc)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jqd3Bj0q2Sc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## How to cite
 
