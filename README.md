@@ -5,9 +5,7 @@ This repository contain the code for performing the regression and classificatio
     
 Go see our [YouTube channel](https://www.youtube.com/channel/UC8wFqCVts-0Xze2qjiGE4uQ/) where you can find more information.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jqd3Bj0q2Sc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-[![](https://img.youtube.com/vi/5vxTgYYFmlM/0.jpg)](https://www.youtube.com/watch?v=5vxTgYYFmlM)
+[![](https://img.youtube.com/vi/jqd3Bj0q2Sc/0.jpg)](https://www.youtube.com/watch?v=jqd3Bj0q2Sc)
 
 
 ## How to cite
@@ -35,6 +33,8 @@ The Matlab Statistics and Machine Learning Toolbox is required.
 
 1. Set the working directory to the folder corresponding to dataset you want to run, e.g. `../TAGI/ToyExample`
 2. run the `.m` function having the filename corresponding to the dataset, e.g. `ToyExample_1D.m`
+
+[![](https://img.youtube.com/vi/1zitul8tfFo/0.jpg)](https://www.youtube.com/watch?v=1zitul8tfFo)
 
 ## Built With
 
