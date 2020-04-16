@@ -5,6 +5,8 @@ This repository contain the code for performing the regression and classificatio
     
 Go see our [YouTube channel](https://www.youtube.com/channel/UC8wFqCVts-0Xze2qjiGE4uQ/) where you can find more information.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jqd3Bj0q2Sc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## How to cite
 
 *Tractable Approximate Gaussian Inference for Bayesian Neural Networks*<br/>[Goulet, J.-A.](https://www.polymtl.ca/cgm/jagoulet/Site/Goulet_web_page_MAIN.html), [Nguyen, L.H.](https://www.polymtl.ca/cgm/jagoulet/Site/Goulet_web_page_LHNGUYEN.html), and Amiri, S.<br/>ArXiv manuscript, April 2020<br/>[[PDF](https://www.polymtl.ca/cgm/jagoulet/Site/Papers/Gaudot_et_al_2019_ICASP13.pdf)]
