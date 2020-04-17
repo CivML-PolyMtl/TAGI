@@ -8,7 +8,7 @@ Go see our [YouTube channel](https://www.youtube.com/channel/UC8wFqCVts-0Xze2qji
 [![](https://img.youtube.com/vi/jqd3Bj0q2Sc/0.jpg)](https://www.youtube.com/watch?v=jqd3Bj0q2Sc)
 
 
-## How to cite
+## Reference
 
 *Tractable Approximate Gaussian Inference for Bayesian Neural Networks*<br/>[Goulet, J.-A.](https://www.polymtl.ca/cgm/jagoulet/Site/Goulet_web_page_MAIN.html), [Nguyen, L.H.](https://www.polymtl.ca/cgm/jagoulet/Site/Goulet_web_page_LHNGUYEN.html), and Amiri, S.<br/>ArXiv manuscript, April 2020<br/>[[PDF](https://www.polymtl.ca/cgm/jagoulet/Site/Papers/Gaudot_et_al_2019_ICASP13.pdf)]
 
