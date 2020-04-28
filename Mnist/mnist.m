@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % File:         mnist
-% Description:  Apply TAGI to mnist 
+% Description:  Apply TAGI to mnist (run #1)
 % Authors:      Luong-Ha Nguyen & James-A. Goulet
 % Created:      December 19, 2019
 % Updated:      January 23, 2020
@@ -54,13 +54,13 @@ NN.nodes                 = [NN.nx 100 100 NN.ny];
 % Input standard deviation        
 NN.sx                    = nan;
 % Observations standard deviation
-NN.sv                    = 0.2*ones(1,1);        
+NN.sv                    = .2*ones(1,1);        
 % Maximal number of learnign epoch
 NN.maxEpoch              = 1;   
 % Factor for initializing weights & bias
 NN.factor4Bp             = 1E-2*ones(1,numel(NN.nodes)-1);
 NN.factor4Wp             = 1*ones(1,numel(NN.nodes)-1);
-% Activation function for hidden layer {'tanh','sigm','cdf','relu','softplus'}
+% Activation function for hidden layer {'tanh','sigm','cdf','relu'}
 NN.hiddenLayerActivation = 'relu';        
 % Activation function for hidden layer {'linear', 'tanh','sigm','cdf','relu'}
 NN.outputActivation      = 'linear';  
@@ -77,6 +77,8 @@ NN.numFolds              = 0;
 NN.earlyStop             = 0;
     % Ratio between training set and validation set
 NN.ratio                 = 0.9;
+NN.trainIdx              = 1:round(0.9*length(trainIdx));
+NN.valIdx                = length(NN.trainIdx)+1:length(trainIdx);
 % Encoder indices for the classification task
 NN.encoderIdx            = encoderIdx;
 % Labels for the observation
@@ -96,10 +98,7 @@ NN.trainMode = 1;
 NN.batchSize = NN.batchSizelist(1);
 NN           = indices.parameters(NN);
 NN           = indices.covariance(NN);
-NN.cd        = char([cd ,'/data/']);
-param        = load([NN.cd, 'mnistNN100100reluEarlyStopInitParam_1.mat']);
-mp           = param.mp;
-Sp           = param.Sp;
+[mp, Sp]     = tagi.initializeWeightBias(NN);
 if NN.gpu == 1
     mp{1}   = gpuArray(mp{1});
     mp{2}   = gpuArray(mp{2});
@@ -108,9 +107,6 @@ if NN.gpu == 1
     Sp{2}   = gpuArray(Sp{2});
     Sp{3}   = gpuArray(Sp{3});
 end
-idx         = load([NN.cd 'mnistTrainIdx_1.mat']);
-NN.trainIdx = idx.trainIdx;
-NN.valIdx   = idx.valIdx;
 %% Run
 [mp, Sp, metric, time, hp, testIdx] = classification(NN, x, y, mp, Sp, trainIdx, testIdx);
 NN.sv       = hp(1);
@@ -125,13 +121,15 @@ disp([' tuning time   : ' num2str(time.hpOptTimelist/60)])
 for n = 2:length(NN.nodes)-1
     nameNN = [nameNN num2str(NN.nodes(n))];
 end
-filename = ['mnist' 'NN' nameNN  NN.hiddenLayerActivation 'B' num2str(NN.batchSizelist(1)) 'Epoch' num2str(hp(2)) 'SigmaV' num2str(NN.sv*10) 'EarlyStop' 'run1'];
-folder   = char([cd ,'/results/']);
+%filename = ['mnist' 'NN' nameNN  NN.hiddenLayerActivation 'B' num2str(NN.batchSizelist(1)) 'Epoch' num2str(hp(2)) 'SigmaV' num2str(NN.sv*10) 'EarlyStop' 'run1'];
+%folder   = char([cd ,'/results/']);
 %save([folder filename],'NN', 'mp', 'Sp', 'metric', 'time', 'hp', 'testIdx')
+
 
 %% Plot class probabilities for the test set
 y_test=y_obs;
 pr=sortrows([metric.PnTest(:,1:10),y_test],11);
+
 idx_y=0;
 for i=0:9
     idx=find(pr(:,11)==i);
@@ -154,7 +152,7 @@ for i=1:10000
 end
 stat=[mean(class_summary==1);mean(class_summary==2);mean(class_summary==3)];
 
-
+%% plot results
 figure('Position', [0 0 1000 300]);
 subplot(1,3,1:2)
 h=imagesc(pr(:,1:10)',[0,1])
@@ -173,8 +171,6 @@ ylabel(['$\Pr($' 'labels' '$|\mathcal{D})$'],'Interpreter','Latex')
 xlabel('Test set labels (0-9)')
 grid on
 
-
-
 subplot(1,3,3)
 h=area(p_class,[stat]');
 h(1).FaceColor = 'white';
@@ -187,4 +183,6 @@ ax.XTick = [0.1 0.5 0.9];
 xlabel('$\phi$','Interpreter','Latex')
 ylabel('$\Pr(~)$','Interpreter','Latex')
 legend({'Pr(correct class)','Pr(unknown)','Pr(incorrect class)' })
+
+
 
