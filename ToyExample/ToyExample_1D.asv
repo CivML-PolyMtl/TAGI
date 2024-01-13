@@ -101,16 +101,12 @@ while ~stop
             [~, ~, ynVal, SynVal] = tagi.network(NNtest, mp, Sp, x_val, y_val);
             [~, ~, yntrain, Syntrain] = tagi.network(NNtest, mp, Sp, x_obs, y_obs);
             
-            Sp{1}=0*Sp{1}+mean(Sp{1});
-            Sp{2}=0*Sp{2}+mean(Sp{2});
-            %Sp{1}=0*Sp{1}+mean([Sp{1};Sp{2}]);
-            %Sp{2}=0*Sp{2}+mean([Sp{1};Sp{2}]);
-            %subplot(1,4,3)
-            %histogram(Sp{1})
-            %subplot(1,4,4)
+            subplot(1,4,3)
+            histogram(Sp{1})
+            subplot(1,4,4)
             %histogram(Sp{2})
 
-            subplot(1,2,2)
+            subplot(1,4,2)
             LL_val(epoch)=log(mvnpdf(y_val,ynVal,diag(SynVal)));
             LL_obs(epoch)=log(mvnpdf(y_obs,yntrain,diag(Syntrain)));
             
@@ -126,7 +122,7 @@ while ~stop
         end
     end
     %if epoch==50
-    subplot(1,2,1)
+    subplot(1,4,1)
     
     % Testing
     n_pred  = 100;

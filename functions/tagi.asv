@@ -314,7 +314,7 @@ classdef tagi
                 % Mean
                 mpUd = mp + sum(J.*dz, 2);
                 % Covariance
-                SpUd = max(1E-8,Sp + mean(sum(J.*dS.*J, 2)));
+                SpUd = max(1E-6,Sp + mean(sum(J.*dS.*J, 2)));
             end
         end
         function [mzUd, SzUd] = backwardHiddeStateUpdate(mz, Sz, mzF, SzF, SzB, Czz, mzB, idx, gpu)

@@ -56,7 +56,7 @@ NN.sx                    = nan;
 % Observations standard deviation
 NN.sv                    = .2*ones(1,1);        
 % Maximal number of learnign epoch
-NN.maxEpoch              = 1;   
+NN.maxEpoch              = 10;   
 % Factor for initializing weights & bias
 NN.factor4Bp             = 1E-2*ones(1,numel(NN.nodes)-1);
 NN.factor4Wp             = 1*ones(1,numel(NN.nodes)-1);
